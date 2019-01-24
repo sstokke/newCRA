@@ -1,0 +1,25 @@
+
+@mixin myFlexBox ($flexDirection: row, $justifyContent: flex-start, $alignItems: flex-start) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-orient: $flexDirection;
+  -webkit-box-direction: $flexDirection;
+  -ms-flex-direction: $flexDirection;
+  -webkit-flex-direction: $flexDirection;
+  flex-direction: $flexDirection;
+
+  -webkit-box-pack: $justifyContent;
+  -ms-flex-pack: $justifyContent;
+  -webkit-justify-content: $justifyContent;
+  justify-content: $justifyContent;
+
+  -webkit-box-align: $alignItems;
+  -ms-flex-align: $alignItems;
+  -webkit-align-items: $alignItems;
+  align-items: $alignItems;
+
+};

@@ -1,0 +1,27 @@
+@import '../../styles/imports.scss';
+
+.ui.menu.top-menu {
+  border: none; /*NOTE:Remove Semantic UI's bottom border*/
+
+  .header-icon {
+    color: $myLightGray;
+  }
+
+  .logo {
+    width: 17rem;
+  }
+  .nav-container {
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0;
+
+    .search-input {
+      padding-left: 0;
+      width: 33%;
+
+      .nav-search {
+        width: 100%;
+      }
+    }
+  }
+}

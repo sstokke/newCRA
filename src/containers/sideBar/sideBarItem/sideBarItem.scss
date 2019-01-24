@@ -1,0 +1,29 @@
+@import '../../../styles/imports.scss';
+
+.sideBar-item{
+  background: $myWhite;
+
+  .sideBar-span{
+
+  }
+  .sideBar-icon{
+    margin-right: 20px;
+    color: $myGray;
+  }
+}
+
+.highlight-item{
+  background: $myWhite;
+  .sideBar-span{
+    font-weight: 600;
+  }
+  .sideBar-icon{
+    margin-right: 20px;
+    color: $myRed;
+  }
+
+}
+
+.sideBar-item-alignment-container{
+  @include myFlexBox(row, flex-start, center);
+}
