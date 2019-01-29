@@ -1,0 +1,15 @@
+@import '../../../styles/imports.scss';
+
+
+.subscription{
+  @include myFlexBox(row, space-between, center);
+  width: 100%;
+}
+
+.new-videos-count{
+  color: $myGray
+}
+
+.rightElement-icon{
+  color: $myRed
+}

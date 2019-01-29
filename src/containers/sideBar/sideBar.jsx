@@ -3,17 +3,13 @@ import {Menu, Divider} from 'semantic-ui-react';
 import SideBarItem from './sideBarItem/sideBarItem.jsx';
 import SideBarItems from './sideBarItemsList.js';
 import SideBarHeader from './sideBarHeader/sideBarHeader.jsx';
-
+import Subscriptions from '../subscriptions/subscriptions.jsx';
+import SideBarFooter from './sideBarFooter/sideBarFooter.jsx';
 import './sideBar.scss';
 
 const dividerList = [
   "Followers", "Liked videos", "Movies and Shows", "Report history"
 ];
-
-const headers = [
-  "Library", "More from Youtube",
-];
-
 
 export class SideBar extends Component {
   render(){
@@ -33,12 +29,15 @@ export class SideBar extends Component {
             )
           }
           if(item.label === "Liked videos"){
+            prev.push(<Subscriptions />);
             prev.push(
               <SideBarHeader title={"More from Youtube"} />
-            )
+            );
           }
           return prev;
         }, [])}
+        <Divider />
+        <SideBarFooter />
       </Menu>
     )
   }
