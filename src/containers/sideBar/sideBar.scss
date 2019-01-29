@@ -1,5 +1,16 @@
 @import '../../styles/imports.scss';
 
-.side-nav{
-  
+.ui.menu.fixed.side-nav { /*NOTE:Overriding Semantic default*/
+  background-color: $myWhite;
+  margin-top: $navBar-height;
+  overflow-y: auto;
+  padding-bottom: $navBar-height;
+
+  .sideBar-item:hover{
+    background-color: #ebebeb;
+  }
+}
+
+.side-nav.ui.vertical.menu{
+  width: $sidebar-left-width; /*NOTE:Overriding Semantic default*/
 }

@@ -1,23 +1,44 @@
 import React, {Component} from 'react';
-import {Menu} from 'semantic-ui-react';
+import {Menu, Divider} from 'semantic-ui-react';
+import SideBarItem from './sideBarItem/sideBarItem.jsx';
+import SideBarItems from './sideBarItemsList.js';
+import SideBarHeader from './sideBarHeader/sideBarHeader.jsx';
+
 import './sideBar.scss';
-import SideBarItem from './sideBarItem/sideBarItem.jsx'
+
+const dividerList = [
+  "Followers", "Liked videos", "Movies and Shows", "Report history"
+];
+
+const headers = [
+  "Library", "More from Youtube",
+];
+
 
 export class SideBar extends Component {
   render(){
     return(
       <Menu borderless vertical stackable fixed="left" className='side-nav'>
-        <SideBarItem highlight={true}  label='Home' icon='home'/>
-        <SideBarItem label='Trending' icon='fire'/>
-        <SideBarItem label='Followers' icon='spy'/>
-        {/* <SideBarHeader title='Library'/> */}
-        <SideBarItem label='History' icon='history'/>
-        <SideBarItem label='Watch later' icon='clock'/>
-        <SideBarItem label='Liked videos' icon='thumbs up'/>
-        <SideBarItem label='Movies and Shows' icon='film'/>
-        <SideBarItem label='Report history' icon='flag'/>
-        <SideBarItem label='Help' icon='help circle'/>
-        <SideBarItem label='Send feedback' icon='comment'/>
+        {SideBarItems.reduce((prev, item, index) => {
+          let divider = dividerList.includes(item.label);
+          prev.push(
+            <SideBarItem label={item.label} icon={item.icon} highlight={index === 0} key={item.label}/>
+          );
+          if(divider){
+            prev.push(<Divider key={index} />);
+          }
+          if(item.label === "Followers"){
+            prev.push(
+              <SideBarHeader title={"Library"} />
+            )
+          }
+          if(item.label === "Liked videos"){
+            prev.push(
+              <SideBarHeader title={"More from Youtube"} />
+            )
+          }
+          return prev;
+        }, [])}
       </Menu>
     )
   }
