@@ -5,7 +5,8 @@ const Item = Menu.Item;
 
 const Subscription = (props) => {
   let rightElement;
-  const {broadcasting, amountOfNewVideos} = props;
+  const {broadcasting, amountOfNewVideos, label} = props;
+
   if(broadcasting){
     rightElement = <Icon name='signal' className="rightElement-icon" />;
   } else if(amountOfNewVideos){
@@ -17,8 +18,8 @@ const Subscription = (props) => {
     <Item>
       <div className="subscription">
         <div>
-          <Image src="http://via.placeholder.com/28x28" avatar/>
-          <span>{props.label}</span>
+          <Image className="subscription-avatar" src="http://via.placeholder.com/28x28" avatar/>
+          <span className="subscription-label">{label}</span>
         </div>
         {rightElement}
       </div>

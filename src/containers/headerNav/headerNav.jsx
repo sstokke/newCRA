@@ -38,7 +38,7 @@ export class HeaderNav extends Component {
           <Item>
             <Icon className='header-icon' name="alarm" size='large'/>
           </Item>
-          <Item name="avatar">
+          <Item name="avatar" className="avatar">
             <Image src="https://scontent-dfw5-1.cdninstagram.com/vp/4aac49d1781fb961a6f0f215009fd6ad/5CBB6DC0/t51.2885-19/10358370_756716074379034_775093134_a.jpg?_nc_ht=scontent-dfw5-1.cdninstagram.com" avatar />
           </Item>
         </Menu.Menu>
